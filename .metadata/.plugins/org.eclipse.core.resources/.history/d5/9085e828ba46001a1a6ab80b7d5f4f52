@@ -1,0 +1,10 @@
+package stack;
+
+public class Stack {
+	private int[] stackArray;
+	private int top;
+
+	public Stack(int maxSize) {
+		stackArray = new int[maxSize];
+	}
+}

@@ -1,0 +1,10 @@
+package adt;
+
+public class Counter {
+	private int numb;
+	private String name;
+
+public counter(String name){
+	this.name = name;
+}
+}

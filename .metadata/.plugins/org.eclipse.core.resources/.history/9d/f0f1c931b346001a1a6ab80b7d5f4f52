@@ -1,0 +1,8 @@
+package adt;
+
+public class Counter {
+private int numb;
+private String name;
+
+counter
+}

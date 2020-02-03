@@ -1,0 +1,19 @@
+package stack;
+
+public class ReverseString {
+	public static void main(String[] args) {
+
+	}
+
+	public static String reverse(String s) {
+		CharStack stck = new CharStack(s.length());
+		for (int i = 0; i < s.length(); i++) {
+			stck.push(s.charAt(i));
+		}
+		String reversedString = "";
+		while (!stck.isEmpty()) {
+			reversedString += stck.pop();
+		}
+		return reversedString;
+	}
+}

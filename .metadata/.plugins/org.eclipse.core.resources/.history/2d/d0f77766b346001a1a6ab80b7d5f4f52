@@ -1,0 +1,19 @@
+package adt;
+
+public class Counter {
+	private int numb;
+	private String name;
+
+	public Counter(String name) {
+		this.name = name;
+		this.numb = 0;
+	}
+	
+	public void increment() {
+		this.numb++;
+	}
+	public int getCounter() {
+		return this.numb;
+	}
+	
+}

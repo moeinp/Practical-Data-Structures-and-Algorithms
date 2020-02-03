@@ -1,0 +1,49 @@
+package stack;
+
+public class Stack {
+	int maxSize;
+	private int[] stackArray;
+	private int indexOfTop;
+
+	public Stack(int maxSize) {
+		this.maxSize = maxSize;
+		stackArray = new int[maxSize];
+		indexOfTop = -1;
+	}
+
+	public void push(int value) {
+		if (isFull()) {
+			throw new IndexOutOfBoundsException("Stack is full");
+		} else {
+			indexOfTop += 1;
+			stackArray[indexOfTop] = value;
+		}
+	}
+
+	public long pop() {
+		if (isEmpty()) {
+			throw new IndexOutOfBoundsException("Stack is empty");
+		} else {
+			indexOfTop -= 1;
+			return stackArray[indexOfTop + 1];
+		}
+	}
+
+	public int peek() {
+		if (isEmpty()) {
+			throw new IndexOutOfBoundsException("Stack is empty");
+		} else {
+			return stackArray[indexOfTop];
+		}
+	}
+
+	public boolean isEmpty() {
+		return indexOfTop == -1;
+	}
+
+	public boolean isFull() {
+		return indexOfTop == maxSize;
+
+	}
+
+}

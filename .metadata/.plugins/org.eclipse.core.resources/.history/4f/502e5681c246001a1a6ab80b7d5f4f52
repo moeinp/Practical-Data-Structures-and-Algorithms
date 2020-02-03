@@ -1,0 +1,31 @@
+package stack;
+
+public class App {
+
+	public static void main(String[] args) {
+		Stack myStack = new Stack(10);
+		System.out.println("max size: " + myStack.getMaxSize());
+		int i = 0;
+		try {
+			for (; i <= 10; i++) {
+				myStack.push(i);
+				System.out.println("push " + i);
+			}
+		} catch (IndexOutOfBoundsException e) {
+			System.out.println("can not push " + i + " since stack is alredy full.");
+		}
+		
+		System.out.println();
+		
+		int j = 10;
+		try {
+			for (; j >= -3; j--) {
+				System.out.println("pop " + myStack.pop());
+			}
+		} catch (IndexOutOfBoundsException e) {
+			System.out.println("Stack is empty, can not pop anything.");
+		}
+
+	}
+
+}

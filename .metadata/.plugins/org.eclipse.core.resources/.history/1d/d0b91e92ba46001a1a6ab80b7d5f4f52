@@ -1,0 +1,12 @@
+package stack;
+
+public class Stack {
+	private int[] stackArray;
+	private int intdexOfTop;
+
+	public Stack(int maxSize) {
+		stackArray = new int[maxSize];
+		intdexOfTop = -1;
+	}
+	
+}

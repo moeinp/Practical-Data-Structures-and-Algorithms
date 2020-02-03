@@ -1,0 +1,28 @@
+package human;
+
+public class Earth {
+	public static void main(String[] args) {
+		
+		Human tom = new Human();
+		tom.age = 5;
+		tom.eyeColor = "browm";
+		tom.heightInInches = 72;
+		tom.name = "Tom";
+		tom.speak();
+		
+		Human joe = new Human();
+		joe.age = 36;
+		joe.eyeColor = "green";
+		joe.heightInInches = 68;
+		joe.name = "Joe";
+		joe.speak();
+		
+		Human human1 = new Human(25, "Blue", 76, "Tom");
+		Human human2 = new Human(28, "green", 68, "Joe");
+		
+		human1.speak();
+		Human2.speak();
+
+	}
+
+}

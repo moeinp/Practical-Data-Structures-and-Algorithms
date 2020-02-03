@@ -1,0 +1,13 @@
+package human;
+
+public class Earth {
+	public static void main(String[] args) {
+		
+		Human tom = new Human();
+		tom.age = 5;
+		tom.eyeColor = "browm";
+		tom.heightInInches = 72;
+		tom.name = "Tom";
+		tom.speak();
+	}
+}

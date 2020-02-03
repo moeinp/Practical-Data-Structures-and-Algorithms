@@ -1,0 +1,10 @@
+package human;
+
+public class Human {
+	String name;
+	int heightInInches;
+	String eyeColor;
+	public void speak() {
+		System.out.println("Hello, my name is " + name);
+	}
+}

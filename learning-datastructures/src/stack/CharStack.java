@@ -1,0 +1,53 @@
+package stack;
+
+public class CharStack {
+	int maxSize;
+	private char[] stackArray;
+	private int indexOfTop;
+
+	public CharStack(int maxSize) {
+		this.maxSize = maxSize;
+		stackArray = new char[maxSize];
+		indexOfTop = -1;
+	}
+
+	public void push(char value) {
+		if (isFull()) {
+			throw new IndexOutOfBoundsException("Stack is full");
+		} else {
+			indexOfTop += 1;
+			stackArray[indexOfTop] = value;
+		}
+	}
+
+	public char pop() {
+		if (isEmpty()) {
+			throw new IndexOutOfBoundsException("Stack is empty");
+		} else {
+			indexOfTop -= 1;
+			return stackArray[indexOfTop + 1];
+		}
+	}
+
+	public char peek() {
+		if (isEmpty()) {
+			throw new IndexOutOfBoundsException("Stack is empty");
+		} else {
+			return stackArray[indexOfTop];
+		}
+	}
+
+	public boolean isEmpty() {
+		return indexOfTop == -1;
+	}
+
+	public boolean isFull() {
+		return indexOfTop == maxSize - 1;
+
+	}
+
+	public int getMaxSize() {
+		return maxSize;
+	}
+
+}

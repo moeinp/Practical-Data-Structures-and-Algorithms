@@ -1,0 +1,23 @@
+package stack;
+
+public class Stack {
+	int maxSize;
+	private int[] stackArray;
+	private int intdexOfTop;
+
+	public Stack(int maxSize) {
+		this.maxSize = maxSize;
+		stackArray = new int[maxSize];
+		intdexOfTop = -1;
+	}
+	
+	public void push(int value) {
+		if(intdexOfTop == stackArray.length -1) {
+			throws new IndexOutOfBoundsException("Stack is full");
+		}else {
+			intdexOfTop += 1;
+			stackArray[intdexOfTop] = value;
+		}
+	}
+
+}

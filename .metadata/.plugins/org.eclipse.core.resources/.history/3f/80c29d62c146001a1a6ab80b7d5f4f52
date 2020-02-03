@@ -1,0 +1,24 @@
+package stack;
+
+public class App {
+
+	public static void main(String[] args) {
+
+		Stack myStack = new Stack(10);
+		System.out.println("max size: " + myStack.getMaxSize());
+
+
+		try {
+			for (int i = 0; i <= 10; i++) {
+				myStack.push(i);
+				System.out.println("push " + i);
+			}
+
+		} catch (IndexOutOfBoundsException e) {
+			System.out.println("can not push 10 since stack is alredy full.");
+
+		}
+
+	}
+
+}
