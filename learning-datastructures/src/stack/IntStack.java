@@ -50,4 +50,12 @@ public class IntStack {
 		return maxSize;
 	}
 
+	public String toString() {
+		String s = "| ";
+		for (int i = 0; i <= indexOfTop; i++) {
+			s = s + stackArray[i] + " | ";
+		}
+		return s;
+	}
+
 }

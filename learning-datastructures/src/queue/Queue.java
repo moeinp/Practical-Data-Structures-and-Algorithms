@@ -11,7 +11,7 @@ public class Queue {
 		BackIndex = -1;
 	}
 
-	public void push(int val) {
+	public void add(int val) {
 		if (isFull()) {
 			throw new IndexOutOfBoundsException("Queue is full");
 		} else {
@@ -20,7 +20,7 @@ public class Queue {
 		}
 	}
 
-	public int pop() {
+	public int remove() {
 		if (isEmpty()) {
 			throw new IndexOutOfBoundsException("Queue is empty");
 		} else {
@@ -54,6 +54,14 @@ public class Queue {
 
 	public int getMaxSize() {
 		return maxSize;
+	}
+
+	public String toString() {
+		String s = "| ";
+		for (int i = 0; i <= BackIndex; i++) {
+			s = s + queueArray[i] + " | ";
+		}
+		return s;
 	}
 
 }
