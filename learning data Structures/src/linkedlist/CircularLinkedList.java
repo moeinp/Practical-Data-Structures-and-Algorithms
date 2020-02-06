@@ -1,29 +1,36 @@
 package linkedlist;
 
-public class SinglyLinkedList {
-	private Node first;
+public class CircularLinkedList extends SinglyLinkedList {
+	private Node last;
 
-	SinglyLinkedList() {
+	public boolean isEmpty() {
+		return getFirst() == null;
 	}
-
-
+	
 	public void insertFront(int data) {
 		Node temp = new Node(data);
+		if (isEmpty()) {
+			last = temp;
+		}
 		temp.next = getFirst();
 		setFirst(temp);
 	}
 
 	public void insertBack(int data) {
-		Node temp = getFirst();
-		while (temp.next != null) {
-			temp = temp.next;
+		if (isEmpty()) {
+			insertFront(data);
+		} else {
+			Node temp = new Node(data);
+			last.next = temp;
+			last = last.next;
 		}
-		temp.next = new Node(data);
-
 	}
 
 	public Node deleteFront() {
 		Node temp = getFirst();
+		if (getFirst().next == null) {
+			last = null;
+		}
 		setFirst(getFirst().next);
 		return temp;
 	}
@@ -33,11 +40,13 @@ public class SinglyLinkedList {
 		Node dummy = getFirst();
 		if (dummy.next == null) {
 			setFirst(null);
+			last = null;
 			return dummy;
 		} else {
 			while (dummy.next.next != null) {
 				dummy = dummy.next;
 			}
+			last = dummy;
 			temp = dummy.next;
 			dummy.next = null;
 		}
@@ -63,16 +72,6 @@ public class SinglyLinkedList {
 		s += ("NULL");
 		return s;
 
-	}
-
-
-	public Node getFirst() {
-		return first;
-	}
-
-
-	public void setFirst(Node first) {
-		this.first = first;
 	}
 
 }

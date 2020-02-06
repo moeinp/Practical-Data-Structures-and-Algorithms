@@ -8,8 +8,5 @@ public class Node {
 		this.data = val;
 	}
 
-	public void displayNode() {
-		System.out.println("{" + data + "}");
-	}
 
 }
